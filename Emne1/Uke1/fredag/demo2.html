@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS</title>
+    <style>
+      body {
+        background-color: rgb(33, 33, 33);
+        color: aliceblue;
+      }
+      .titleText {
+        color: aqua;
+        font-size: 50px;
+        font-family:
+          "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans",
+          Arial, sans-serif;
+        border: 1px dotted purple;
+        background-color: purple;
+      }
+      .text {
+        background-color: blue;
+      }
+      .circle {
+        height: 100px;
+        width: 100px;
+        border-radius: 50%;
+        background-color: aliceblue;
+      }
+      .yellow {
+        background-color: yellow;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app"></div>
+
+    <script>
+      function logIn() {
+        document.getElementById("app").innerHTML =
+      /*HTML*/`<h2 id="topText">Du er logget inn</h2>
+        <button onclick="updateView()" style="background-color:red">Log out</button>`;
+      }
+
+      // updateView => trykk => logIn => logOut => uptadeView
+
+      function updateView() {
+        document.getElementById("app").innerHTML = /*HTML*/ `
+        <h2 id="topText">Du er ikke logget inn</h2>
+        <button onclick="logIn()" style="background-color:green">Log inn</button>
+        `;
+      }
+
+      /*HTML*/``
+
+      updateView();
+    </script>
+  </body>
+</html>
