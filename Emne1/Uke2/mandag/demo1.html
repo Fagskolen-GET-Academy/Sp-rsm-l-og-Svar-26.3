@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    
+    <script>
+      function show1() {
+        document.getElementById("app").innerHTML = `
+        <h1>1</h1>
+        <button onclick="show2()">Øke med én</button>
+        <button onclick="show2()">Doble</button>
+    `;
+      }
+      function show2() {
+        document.getElementById("app").innerHTML = `
+        <h1>2</h1>
+        <button onclick="show3()">Øke med én</button>
+        <button onclick="show4()">Doble</button>
+    `;
+      }
+      function show3() {
+        document.getElementById("app").innerHTML = `
+        <h1>3</h1>
+        <button onclick="show4()">Øke med én</button>
+        <button onclick="show6()">Doble</button>
+    `;
+      }
+      function show4() {
+        document.getElementById("app").innerHTML = `
+        <h1>4</h1>
+        <button onclick="show2()">Øke med én</button>
+        <button onclick="show8()">Doble</button>
+    `;
+      }
+
+      show1();
+    </script>
+  </body>
+</html>
