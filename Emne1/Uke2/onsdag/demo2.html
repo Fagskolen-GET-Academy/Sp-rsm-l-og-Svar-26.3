@@ -17,7 +17,7 @@
         flex-direction: column;
       }
 
-      .redLight {
+      .red {
         background-color: red;
         width: 25px;
         height: 25px;
@@ -25,7 +25,7 @@
         cursor: pointer;
       }
 
-      .yellowLight {
+      .yellow {
         background-color: yellow;
         width: 25px;
         height: 25px;
@@ -33,7 +33,7 @@
         cursor: pointer;
       }
 
-      .greenLight {
+      .green {
         background-color: green;
         width: 25px;
         height: 25px;
@@ -41,7 +41,7 @@
         cursor: pointer;
       }
 
-      .grayLight {
+      .gray {
         background-color: gray;
         width: 25px;
         height: 25px;
@@ -52,41 +52,20 @@
   </head>
   <body>
     <div class="mainDiv" id="app"></div>
+    <button onclick="drawTrafficLight('red', 'gray', 'gray')">Stopp</button>
+    <button onclick="drawTrafficLight('red', 'yellow', 'gray')">Klar</button>
+    <button onclick="drawTrafficLight('gray', 'gray', 'green')">Kjør</button>
 
     <script>
-      function drawTrafficLight() {
+      function drawTrafficLight(color1, color2, color3) {
         document.getElementById("app").innerHTML = /*HTML*/ `
-            <div class="redLight"></div>
-            <div class="yellowLight"></div>
-            <div onclick="drawTrafficLightGreen()" class="grayLight"></div>
+            <div class="${color1}"></div>
+            <div class="${color2}"></div>
+            <div class="${color3}"></div>
             `;
       }
 
-      function drawTrafficLightGreen() {
-        document.getElementById("app").innerHTML = /*HTML*/ `
-            <div class="redLight"></div>
-            <div onclick="drawTrafficLightRedGreen()" class=${}></div>
-            <div class="greenLight"></div>
-            `;
-      }
-
-      function drawTrafficLightRedGreen() {
-        document.getElementById("app").innerHTML = /*HTML*/ `
-            <div class="redLight"></div>
-            <div class="grayLight"></div>
-            <div  onclick="drawTrafficLightRed()" class="greenLight"></div>
-            `;
-      }
-
-      function drawTrafficLightRed() {
-        document.getElementById("app").innerHTML = /*HTML*/ `
-            <div class="redLight"></div>
-            <div class="grayLight"></div>
-            <div class="grayLight"></div>
-            `;
-      }
-
-      drawTrafficLight();
+      drawTrafficLight('gray', 'gray', 'gray');
     </script>
   </body>
 </html>

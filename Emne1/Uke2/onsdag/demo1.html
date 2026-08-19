@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        #colorBox{
+            width: 200px;
+            height: 200px;
+            border: solid 1px;
+        }
+    </style>
+  </head>
+  <body>
+
+    <div id="colorBox"></div>
+    <br></br>
+    <div>
+      <button onclick="changeColor('red')">Red</button>
+      <button onclick="changeColor('green')">Green</button>
+      <button onclick="changeColor('pink')">Pink</button>
+      <button onclick="changeColor('yellow')">Yellow</button>
+      <button onclick="changeColor(null)">Clear</button>
+    </div>
+
+    <script>
+      // const age = 32;
+      // const name  = "Kenneth";
+
+      // function increaseAge(){
+      //    age = age+1
+      // }
+
+    //   function sayName(x) {
+    //     console.log("Hei " + x);
+    //   }
+
+    function changeColor(color){
+        document.getElementById("colorBox").style.backgroundColor = color;
+    }
+
+    </script>
+  </body>
+</html>
