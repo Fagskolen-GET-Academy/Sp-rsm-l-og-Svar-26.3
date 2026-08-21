@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script>
+      function addtext() {
+        document.getElementById("app").innerHTML = addMember("Kenneth", "pizza") + addMember("Ole", "Disc golf");
+      }
+
+      // function sayName(name){
+      //     return `Hei ${name}`
+      // }
+
+      // function sum(num1, num2){
+      //     let sum = num1 + num2
+      //     return sum
+      // }
+
+      function addMember(name, like) {
+        let html = /*HTML*/ `
+            <h2>Navn ${name}</h2>
+            <p>Liker ${like}</p>
+            `;
+         return html
+      }
+    </script>
+  </body>
+</html>

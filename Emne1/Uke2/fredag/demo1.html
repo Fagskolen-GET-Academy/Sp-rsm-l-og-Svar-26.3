@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+       <style>
+        #colorBox{
+            width: 200px;
+            height: 200px;
+            border: solid 1px;
+        }
+    </style>
+  </head>
+  <body>
+     <div id="colorBox"></div>
+    <br></br>
+    <div>
+      <button onclick="changeColor(this)">Red</button>
+      <button onclick="changeColor(this)">Green</button>
+      <button onclick="changeColor(this)">Pink</button>
+      <button onclick="changeColor(this)">Yellow</button>
+      <button onclick="changeColor(this)">null</button>
+    </div>
+  </body>
+  <script>
+
+
+
+    // let text2 = "Hei verden!"
+    // let text = `Kenneth sa ${text2}`;
+
+    function changeColor(color){
+      document.getElementById("colorBox").style.backgroundColor = color.innerText
+    }
+
+
+
+
+  </script>
+</html>
