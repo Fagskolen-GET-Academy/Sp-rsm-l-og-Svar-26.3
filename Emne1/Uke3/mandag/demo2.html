@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app"></div>
+
+    <script>
+      let firstName = "";
+      let email = "";
+      let mainDiv = document.getElementById("app");
+
+      function updateView() {
+        mainDiv.innerHTML = /*HTML*/ `
+            <input type="text" name="firstName" placeholder="First name" oninput="firstName=this.value" value=${firstName}>
+            <input type="text" name="email" placeholder="email" oninput="email=this.value" value=${email}>
+            <button onclick="submitForm()">Register</button>
+            `;
+      }
+
+      function submitForm() {
+        if (firstName && email) {
+          mainDiv.innerHTML = /*HTML*/ `
+                <p>Name: ${firstName}</p>
+                <p>Email: ${email}</p>
+                <button onclick="updateView()">Edit</button>
+                `;
+        }
+      }
+
+      updateView();
+    </script>
+  </body>
+</html>
