@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+
+        .redColor{
+            background-color: red;
+        }
+
+    </style>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script>
+
+
+      //Model
+      //Data, kan forandre seg
+
+      //View
+      //Tegner data til skjermen, vanligvis updateView()
+
+      //Controller
+      //forandrer på data
+
+      let count = 0;
+      let pointsPerClick = 1;
+      let colorClass=null;
+
+      function updateView() {
+        document.getElementById("app").innerHTML = /*HTML*/ `
+            <p class="${colorClass}" id="number">${count}</p>
+            <button onclick="increase()">+</button>
+            <button onclick="decrease()">-</button>
+            <button onclick="buyUpgrade()">Upgrade</button>
+            `;
+      }
+
+      //sjekk om du har 10 poeng
+      //kjøp upgrade
+      //per click gir nå ekstra poeng per click
+
+      function increase() {
+        count += pointsPerClick;
+        updateView();
+      }
+
+      function decrease() {
+        count--;
+        updateView();
+      }
+
+      function buyUpgrade(){
+        if(count>=10){
+            pointsPerClick += 1;
+            count = 0;
+            colorClass = 'redColor'
+            updateView()
+        }
+      }
+
+      updateView();
+    </script>
+  </body>
+</html>

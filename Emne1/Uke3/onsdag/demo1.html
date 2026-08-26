@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #board {
+        display: grid;
+        grid-template-columns: repeat(8, 100px);
+        grid-template-rows: repeat(8, 100px);
+      }
+
+      .lightSquare {
+        background-color: rgb(240, 217, 181);
+      }
+
+      .darkSquare {
+        background-color: rgb(181, 136, 99);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="board">
+    
+    </div>
+    <script>
+
+      function updateView(){
+        document.getElementById("board").innerHTML += drawBoard().repeat(4)
+      }
+
+      function drawLightSquare(){
+        return `<div class="lightSquare"></div>`
+      }
+
+      function drawDarkSquare(){
+        return `<div class="darkSquare"></div>`
+      }
+
+      function drawPattern(){
+       return drawLightSquare() + drawDarkSquare()
+      }
+
+      function drawSecondPattern(){
+        return drawDarkSquare() + drawLightSquare()
+      }
+
+      function drawBoard(){
+        return drawPattern().repeat(4) + drawSecondPattern().repeat(4)
+      }
+
+
+
+      updateView()
+
+    </script>
+  </body>
+</html>
