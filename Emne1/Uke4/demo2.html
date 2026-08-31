@@ -54,7 +54,7 @@
 
   function updateView() {
     for(let i=0; i<64; i++){
-      if(i%2 == 0){
+      if(i%2 != 0){
          mainDiv.innerHTML += /*HTML*/`<div class="selected">${i}</div>`
       }
       else{
