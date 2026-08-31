@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <div style="display: flex; flex-direction: column; align-items: center">
+      <!-- Rows label (centered above) -->
+      <span style="margin-bottom: 5px">Columns</span>
+
+      <div style="display: flex; align-items: center">
+        <!-- Columns label (centered along the side) -->
+        <span
+          style="
+            writing-mode: vertical-rl;
+            transform: rotate(180deg);
+            margin-right: 10px;
+            text-align: center;
+          "
+        >
+          Rows
+        </span>
+
+        <!-- The board -->
+        <div id="app"></div>
+      </div>
+    </div>
+  </body>
+</html>
+
+<style>
+  .selected {
+    background-color: yellow;
+  }
+
+  #app {
+    display: grid;
+    grid-template-columns: repeat(8, 50px);
+    grid-template-rows: repeat(8, 50px);
+  }
+
+  #app > div {
+    border: 1px solid lightblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+</style>
+<script>
+  let mainDiv = document.getElementById("app");
+
+  function updateView() {
+    for(let i=0; i<64; i++){
+      if(i%2 == 0){
+         mainDiv.innerHTML += /*HTML*/`<div class="selected">${i}</div>`
+      }
+      else{
+        mainDiv.innerHTML += /*HTML*/ `<div>${i}</div>`;
+      }
+    }
+  }
+
+  updateView();
+
+
+</script>

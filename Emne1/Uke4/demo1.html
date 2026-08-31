@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .mainDiv {
+        background-color: black;
+        border-radius: 30%;
+        height: 100px;
+        width: 40px;
+        color: whitesmoke;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-direction: column;
+      }
+
+      .red {
+        background-color: red;
+        width: 25px;
+        height: 25px;
+        border-radius: 100%;
+        cursor: pointer;
+      }
+
+      .yellow {
+        background-color: yellow;
+        width: 25px;
+        height: 25px;
+        border-radius: 100%;
+        cursor: pointer;
+      }
+
+      .green {
+        background-color: green;
+        width: 25px;
+        height: 25px;
+        border-radius: 100%;
+        cursor: pointer;
+      }
+
+      .gray {
+        background-color: gray;
+        width: 25px;
+        height: 25px;
+        border-radius: 100%;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="mainDiv" id="app"></div>
+    <button onclick="drawTrafficLight('red', 'gray', 'gray')">Stopp</button>
+    <button onclick="drawTrafficLight('red', 'yellow', 'gray')">Klar</button>
+    <button onclick="drawTrafficLight('gray', 'gray', 'green')">Kjør</button>
+
+    <script>
+      function drawTrafficLight(color1, color2, color3) {
+        document.getElementById("app").innerHTML = /*HTML*/ `
+            <div class="${color1}"></div>
+            <div class="${color2}"></div>
+            <div class="${color3}"></div>
+            `;
+      }
+           
+      drawTrafficLight('gray', 'gray', 'gray');
+    </script>
+  </body>
+</html>
