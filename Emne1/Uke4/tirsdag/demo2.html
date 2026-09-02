@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app"></div>
+
+    <script>
+      let app = document.getElementById("app");
+
+      let computerChoice = getRandomNumber();
+      let userChoice;
+
+      function updateView() {
+        app.innerHTML = /*HTML*/ `
+        <input type="button" value="Stein" onclick="handleUserChoice(1)">
+        <input type="button" value="Saks" onclick="handleUserChoice(2)">
+        <input type="button" value="Papir" onclick="handleUserChoice(3)">
+        `;
+      }
+
+      function handleUserChoice(input) {
+        if (input == computerChoice) {
+          console.log("Draw");
+        } else if (
+          (input == 1 && computerChoice == 2) ||
+          (input == 2 && computerChoice == 3) ||
+          (input == 3 && computerChoice == 1)
+        ) {
+          console.log("You win!");
+        }
+        else{ 
+            console.log("Computer wins")
+        }
+        computerChoice = getRandomNumber()
+      }
+
+      function getRandomNumber() {
+        let randomNumber;
+        randomNumber = Math.floor(Math.random() * 3) + 1;
+        return randomNumber;
+      }
+
+      updateView();
+    </script>
+  </body>
+</html>
