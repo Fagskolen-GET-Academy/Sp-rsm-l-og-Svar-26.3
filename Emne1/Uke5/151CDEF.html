@@ -66,7 +66,7 @@
         background-color: #00456e;
       }
 
-      .result {
+      #result {
         margin-top: 20px;
         padding: 16px;
         background: #f0f4f8;
@@ -83,15 +83,28 @@
     <script>
       const app = document.getElementById("app");
 
+      //Model
+      let inputText = "";
+      let reversedText = "";
+
+      //View
       function updateView() {
         app.innerHTML = /*HTML*/ `
           <h1>Tekstverktøy</h1>
-          <input type="text" placeholder="Skriv inn tekst" />
+          <input type="text" placeholder="Skriv inn tekst" oninput="inputText=this.value" />
           <div class="buttons">
-            <button>Reverser tekst</button>
+            <button onclick="reverseText()">Reverser tekst</button>
           </div>
-          <div class="result"></div>
+          <div id="result"></div>
         `;
+      }
+
+      //Controller
+      function reverseText() {
+        for (let i = inputText.length-1; i>=0; i--) {
+          reversedText += inputText[i];
+        }
+        document.getElementById("result").innerHTML = reversedText
       }
 
       updateView();
