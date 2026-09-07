@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="no">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 32px;
+      }
+      input,
+      button {
+        font-size: 18px;
+        padding: 8px 12px;
+        margin: 6px 0;
+      }
+      .boxes {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 5px;
+        margin-top: 16px;
+      }
+      .boxes > div {
+        width: 40px;
+        height: 40px;
+        background-color: coral;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app"></div>
+
+    <script>
+      const app = document.getElementById("app");
+      let amount = 0;
+
+      function updateView() {
+        app.innerHTML = /*HTML*/ ` <h1>Du bestemmer antallet</h1>
+      <p>Skriv inn et tall og klikk knappen.</p>
+      <input type="number" id="antall" value="${amount}" oninput="amount=this.value"/>
+      <button onclick="updateView()">Tegn bokser</button>
+      <div class="boxes">
+        ${drawBoxes()}
+      </div>`;
+      }
+
+      function drawBoxes() {
+        let html = "";
+        for (let i = 0; i < amount; i++) {
+          html += `<div></div>`;
+        }
+        return html;
+      }
+
+      updateView();
+      drawBoxes();
+    </script>
+  </body>
+</html>
