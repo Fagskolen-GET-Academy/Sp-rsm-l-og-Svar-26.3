@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //   let numbers = [1, 2, 2, 3, 4, 5, 6, 6, 7, 8, 8, 9, 10];
+      //   let oddNumbers = [];
+      //   for (let i = 0; i < numbers.length; i++) {
+      //     if (numbers[i] % 2 !== 0) {
+      //       oddNumbers.push(numbers[i]);
+      //     }
+      //   }
+      //   console.log(oddNumbers);
+
+      const prices = [249, 149, 599, 199, 649, 59, 49];
+
+      // En liste med strenger
+      const games = [
+        "Hades",
+        "Stardew Valley",
+        "Elden Ring",
+        "Celeste",
+        "Baldur's Gate 3",
+        "Vampire Survivors",
+      ];
+
+      //  let cheap = []
+      //   for(let i=0; i<prices.length; i++){
+      //     if(prices[i] < 200){
+      //         cheap.push(prices[i])
+      //     }
+      //   }
+
+      //   function greet(name){
+      //     return `Hei ${name}`
+      //   }
+
+      //   const myFunction = greet;
+
+      // filter: beholder alle prisene under 200 → ny array [149, 199, 59]
+      const cheap = prices.filter((elem) => elem < 200);
+
+      // map: ny array der hver pris har fått 25 % mva → samme lengde som prices
+      const withVat = prices.map((elem) => elem * 1.25);
+
+      // find: returnerer FØRSTE pris under 100 (ett tall, ikke en array) → 59
+      const firstCheap = prices.find((elem) => elem < 100);
+
+      // find: returnerer FØRSTE tittel lengre enn 10 tegn → "Stardew Valley"
+      const longestName = games.find((elem) => elem.length > 10);
+
+      // some: er MINST ÉN pris over 500? → true/false (boolean)
+      const hasExpensiveGame = prices.some((elem) => elem > 500);
+
+      // every: er ALLE prisene over 50? → true/false (boolean)
+      const allOver50 = prices.every((elem) => elem > 50);
+
+      // kjede: behold titler lengre enn 6 tegn, gjør dem så til STORE bokstaver → ny array
+      const featured = games
+        .filter((game) => game.length > 6)
+        .map((game) => game.toUpperCase());
+
+      // map + join: gjør hver tittel til <li>…</li> og slå dem sammen til én streng
+      let html = games.map((elem) => `<li>${elem}</li>`).join(" ");
+    </script>
+  </body>
+</html>
