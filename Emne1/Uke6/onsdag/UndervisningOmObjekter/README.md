@@ -2,7 +2,7 @@
 
 ## Opptak
 
-Videoopptak ligger [`https://photos.app.goo.gl/B9Rc8mY5Bv4hLrUQ9`](her) 
+Videoopptak ligger [her](`https://photos.app.goo.gl/B9Rc8mY5Bv4hLrUQ9`) 
 
 ## Struktur
 
