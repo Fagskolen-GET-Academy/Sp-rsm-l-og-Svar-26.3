@@ -1,33 +1,28 @@
-let clicker = {
-  count: 0,
-  letter: "A",
-  increase: function () {
-    this.count++;
-  },
-};
+class Clicker {
+  #count;
+  #letter;
+  constructor(letter) {
+    this.#letter = letter;
+    this.#count = 0;
+  }
+  increase() {
+    this.#count++;
+  }
 
-//Class
-function Clicker(letter) {
-  return {
-    count: 0,
-    letter,
-    increase: function () {
-      this.count++;
-    },
-  };
+  get count() {
+    return this.#count;
+  }
+
+  get letter() {
+    return this.#letter;
+  }
 }
 
-function increaseCount() {
-  this.count++;
-}
+let clicker1 = new Clicker("A");
+let clicker2 = new Clicker("B");
+let clicker3 = new Clicker("C");
 
-//instances of Clicker
-let clicker2 = Clicker("B");
-let clicker3 = Clicker("C");
-
-clicker2.count++;
-
-let myClickers = [clicker, clicker2, clicker3];
+let myClickers = [clicker1, clicker2, clicker3];
 
 function drawClickers() {
   let html = "";
@@ -38,7 +33,7 @@ function drawClickers() {
 }
 
 function increaseCount(letter) {
-  for (obj of myClickers) {
+  for (let obj of myClickers) {
     if (obj.letter == letter) {
       obj.increase();
     }
